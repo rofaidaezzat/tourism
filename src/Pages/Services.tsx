@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { Plane, Users, Megaphone, MapIcon, Building2, HeadphonesIcon } from 'lucide-react';
+import { Plane, Users, Megaphone, MapIcon } from 'lucide-react';
 import { Card } from '../Component/Card';
 
 const services = [
