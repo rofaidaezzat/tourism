@@ -1,4 +1,5 @@
 import { About } from "./About"
+import { TargetAudience } from "./TargetAudience"
 import { Contact } from "./Contact"
 import { FeaturedTrips } from "./FeaturedTrips"
 import { Hero } from "./Hero"
@@ -16,6 +17,7 @@ export function Home() {
         <div id="about">
           <About />
         </div>
+        <TargetAudience />
         <div id="services">
           <Services />
         </div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import { ArrowRight, Plane } from 'lucide-react';
 import { Button } from '../Component/Button';
+import heroBg from '../assets/hero_background.png';
 
 export function Hero() {
   return (
@@ -13,7 +14,7 @@ export function Hero() {
       <div 
         className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1758677685484-1b9db9049cff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHRyYXZlbGluZyUyMGJhY2twYWNrc3xlbnwxfHx8fDE3Njg2NDAzMTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)',
+          backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

@@ -24,7 +24,7 @@ export function Footer() {
               <span className="text-2xl">Student Tourism</span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
-              Making world exploration accessible to every student through affordable, safe, and unforgettable travel experiences.
+              Your trusted partner for seamless university student trips and premium corporate travel solutions worldwide.
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, index) => (

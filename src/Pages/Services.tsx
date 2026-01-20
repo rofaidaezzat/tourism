@@ -1,31 +1,34 @@
 import { motion } from "framer-motion";
-
-import { Plane, Users, Megaphone, MapIcon } from 'lucide-react';
 import { Card } from '../Component/Card';
+
+import studentReceptionImg from '../assets/student_reception.png';
+import logisticsSupportImg from '../assets/logistics_support.png';
+import educationalMarketingImg from '../assets/educational_marketing.png';
+import tourismTripsImg from '../assets/tourism_trips.png';
 
 const services = [
   {
-    icon: Plane,
-    title: 'Student Reception Services',
-    description: 'Providing student reception services for study abroad offices and universities, including reception at airports and ports.',
-    color: 'from-blue-400 to-blue-500',
+    image: studentReceptionImg,
+    title: 'Warm Welcomes & Seamless Arrivals',
+    description: 'We ensure a smooth transition for students with our premium meet-and-greet services at airports and borders, partnering with universities to provide a hospitable first impression.',
+    color: 'from-blue-400 to-blue-500', 
   },
   {
-    icon: Users,
-    title: 'Logistics Support & Coordination',
-    description: 'Comprehensive logistical support and on-ground coordination for students and institutions.',
+    image: logisticsSupportImg,
+    title: 'End-to-End Logistics & Coordination',
+    description: 'From transportation to accommodation, our expert team manages every detail of the journey, allowing institutions and corporations to focus on their core objectives.',
     color: 'from-blue-500 to-blue-600',
   },
   {
-    icon: Megaphone,
-    title: 'Marketing Educational Services',
-    description: 'Strategic marketing and promotional services for educational institutions.',
+    image: educationalMarketingImg,
+    title: 'Strategic Educational Marketing',
+    description: 'We help educational institutions shine with tailored marketing strategies that attract talent and elevate your brand presence in the global market.',
     color: 'from-blue-600 to-blue-700',
   },
   {
-    icon: MapIcon,
-    title: 'Student Tourism Trips',
-    description: 'Organization and execution of cultural and educational tourism programs.',
+    image: tourismTripsImg,
+    title: 'Unforgettable Cultural Journeys',
+    description: 'Curating enriching travel experiences for students and corporate teams. Our programs blend education, culture, and adventure to create lasting memories.',
     color: 'from-blue-500 to-blue-600',
   },
 ];
@@ -41,15 +44,15 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl text-gray-900 mb-4">
-            Our Services
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            Our Premium Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive solutions for universities and study abroad programs
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Tailored solutions designed for <span className="text-blue-600 font-semibold">Universities</span> and <span className="text-blue-600 font-semibold">Companies</span>. We bridge the gap between education and travel with professionalism and style.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -58,22 +61,24 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-2xl transition-shadow duration-300 rounded-2xl border-none bg-white">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 shadow-lg`}>
-                    <service.icon size={32} className="text-white" />
-                  </div>
-                </motion.div>
+              <Card className="h-full hover:shadow-2xl transition-all duration-300 rounded-2xl border-none bg-white overflow-hidden group">
+                <div className="relative h-64 overflow-hidden">
+                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-20 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                   <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                   />
+                </div>
                 
-                <h3 className="text-xl text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                    {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                    {service.description}
+                    </p>
+                </div>
               </Card>
             </motion.div>
           ))}

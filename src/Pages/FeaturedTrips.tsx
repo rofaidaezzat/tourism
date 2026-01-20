@@ -1,46 +1,49 @@
 import { motion } from "framer-motion";
-
-import { MapPin, Calendar, Users, Star, Badge } from 'lucide-react';
+import { MapPin, Calendar, Users, Star, ArrowRight } from 'lucide-react';
 import { Card } from '../Component/Card';
 import { Button } from '../Component/Button';
 
+// Import local images
+import europeanTripImg from '../assets/european_trip.png';
+import asianTripImg from '../assets/asian_trip.png';
+import southAmericanTripImg from '../assets/south_american_trip.png';
 
 const trips = [
   {
-    image: 'https://images.unsplash.com/photo-1614274154785-812302087da4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHRyYXZlbGVycyUyMGV4cGxvcmluZ3xlbnwxfHx8fDE3Njg2NDAzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: europeanTripImg,
     title: 'European Cultural Expedition',
     location: 'Paris, Rome & Barcelona',
     duration: '12 Days',
-    price: '$1,499',
     rating: 4.9,
     students: 24,
-    badge: 'Popular',
+    badge: 'Trending',
+    description: 'Immerse yourself in art, history, and cuisine.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1696694139314-e0e5962b8dc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb25hbCUyMHRvdXIlMjBtdXNldW18ZW58MXx8fHwxNzY4NjQwMzE4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: asianTripImg,
     title: 'Asian Adventure Experience',
-    location: 'Bangkok, Tokyo & Singapore',
+    location: 'Kyoto, Tokyo & Singapore',
     duration: '10 Days',
-    price: '$1,299',
     rating: 4.8,
     students: 18,
     badge: 'New',
+    description: 'Discover ancient traditions and modern wonders.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1642009071428-119813340e22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JsZCUyMG1hcCUyMHRyYXZlbCUyMHBsYW5uaW5nfGVufDF8fHx8MTc2ODY0MDMxOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: southAmericanTripImg,
     title: 'South American Discovery',
     location: 'Peru, Chile & Argentina',
     duration: '14 Days',
-    price: '$1,799',
     rating: 5.0,
     students: 16,
     badge: 'Featured',
+    description: 'Hike ancient trails and explore vibrant cultures.'
   },
 ];
 
 export function FeaturedTrips() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,15 +52,18 @@ export function FeaturedTrips() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl text-gray-900 mb-4">
-            Featured Student Trips
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mb-4">
+            Explore the World with Us
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            Featured Student Journeys
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Handpicked destinations and experiences for adventurous students
+            Unforgettable educational adventures designed for young explorers. Safe, fun, and culturally immersive.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {trips.map((trip, index) => (
             <motion.div
               key={index}
@@ -66,56 +72,49 @@ export function FeaturedTrips() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 rounded-2xl border-none group">
-                <div className="relative overflow-hidden h-64">
+              <Card className="h-full group hover:shadow-2xl transition-all duration-300 rounded-2xl border-none bg-white overflow-hidden flex flex-col">
+                <div className="relative h-72 overflow-hidden">
                   <img 
                     src={trip.image} 
                     alt={trip.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none px-3 py-1">
+                    <span className="bg-white/90 backdrop-blur-md text-blue-700 font-semibold px-4 py-1.5 rounded-full text-sm shadow-sm">
                       {trip.badge}
-                    </Badge>
+                    </span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center gap-1 text-white mb-2">
-                      <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm">{trip.rating}</span>
+                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <div className="flex items-center gap-2 mb-2">
+                       <MapPin size={16} className="text-blue-300" />
+                       <span className="text-sm font-medium opacity-90">{trip.location}</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="text-xl text-gray-900 mb-3">
-                    {trip.title}
-                  </h3>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
+                      {trip.title}
+                    </h3>
+                  </div>
+
+                   <p className="text-gray-600 mb-6 line-clamp-2">
+                    {trip.description}
+                  </p>
                   
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <MapPin size={18} className="text-blue-500" />
-                      <span className="text-sm">{trip.location}</span>
-                    </div>
+                  <div className="grid grid-cols-2 gap-4 mb-6 pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-2 text-gray-600">
                       <Calendar size={18} className="text-blue-500" />
-                      <span className="text-sm">{trip.duration}</span>
+                      <span className="text-sm font-medium">{trip.duration}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-600">
                       <Users size={18} className="text-blue-500" />
-                      <span className="text-sm">{trip.students} students joined</span>
+                      <span className="text-sm font-medium">{trip.students} Joined</span>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center justify-between pt-4 border-t">
-                    <div>
-                      <div className="text-sm text-gray-500">Starting from</div>
-                      <div className="text-2xl text-blue-600">{trip.price}</div>
-                    </div>
-                    <Button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 rounded-full">
-                      View Details
-                    </Button>
-                  </div>
+               
                 </div>
               </Card>
             </motion.div>
@@ -123,18 +122,18 @@ export function FeaturedTrips() {
         </div>
         
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.5, delay: 0.3 }}
+           className="text-center mt-16"
         >
           <Button 
             size="lg"
             variant="outline"
-            className="border-blue-500 text-blue-600 hover:bg-blue-50 rounded-full px-8"
+            className="border-2 border-blue-600 text-blue-700 hover:bg-blue-50 rounded-full px-10 py-6 text-lg font-semibold transition-all hover:scale-105"
           >
-            View All Packages
+            View All Destinations
           </Button>
         </motion.div>
       </div>
