@@ -1,6 +1,6 @@
 
+
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
-import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import logoTop from '../assets/Gemini_Generated_Image_ijgu4tijgu4tijgu__1_-removebg-preview.png';
 

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import { ArrowRight, Plane } from 'lucide-react';
-import { Button } from '../Component/Button';
+
+import { Plane } from 'lucide-react';
 import heroBg from '../assets/hero_background.png';
 
 export function Hero() {

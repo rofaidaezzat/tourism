@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from 'lucide-react';
-import { Button } from '../Component/Button';
 import logoTop from '../assets/Gemini_Generated_Image_ijgu4tijgu4tijgu__1_-removebg-preview.png';
 import logoScrolled from '../assets/photo_2026-01-27_12-25-13-removebg-preview.png';
 

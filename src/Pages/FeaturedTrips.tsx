@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Users } from "lucide-react";
 import { Card } from "../Component/Card";
-import { Button } from "../Component/Button";
 
 // Import local images
 import europeanTripImg from "../assets/european_trip.png";
