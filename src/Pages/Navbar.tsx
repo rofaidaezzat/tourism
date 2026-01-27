@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Plane } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '../Component/Button';
+import logoTop from '../assets/Gemini_Generated_Image_ijgu4tijgu4tijgu__1_-removebg-preview.png';
+import logoScrolled from '../assets/photo_2026-01-27_12-25-13-removebg-preview.png';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,12 +45,11 @@ export function Navbar() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2"
           >
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center transition-all`}>
-              <Plane size={24} className="text-white" />
-            </div>
-            <span className={`text-xl transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-              Student Tourism
-            </span>
+            <img 
+              src={scrolled ? logoScrolled : logoTop}
+              alt="Student Tourism" 
+              className="h-32 w-auto object-contain"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -71,23 +72,7 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="hidden md:block"
-          >
-            <Button 
-              className={`rounded-full px-6 ${
-                scrolled
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700'
-                  : 'bg-white text-blue-600 hover:bg-blue-50'
-              }`}
-            >
-              Get Started
-            </Button>
-          </motion.div>
+         
 
           {/* Mobile Menu Button */}
           <button
@@ -124,9 +109,7 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 rounded-full">
-                Get Started
-              </Button>
+            
             </div>
           </motion.div>
         )}

@@ -14,11 +14,11 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mb-6">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
               Who We Are
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Bridging Education & <br/> <span className="text-blue-600">Corporate Travel</span>
+              Bridging Education & <br/> <span className="text-primary">Corporate Travel</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               We specialize in crafting seamless travel experiences for two distinct worlds: ambitious educational institutions and forward-thinking companies. 
@@ -29,8 +29,8 @@ export function About() {
             
             <div className="space-y-6">
               <div className="flex items-start gap-4 group">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center flex-shrink-0">
-                  <GraduationCap size={28} className="text-blue-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-14 h-14 rounded-2xl bg-primary/5 group-hover:bg-primary transition-colors duration-300 flex items-center justify-center flex-shrink-0">
+                  <GraduationCap size={28} className="text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-1">For Universities</h3>
@@ -39,8 +39,8 @@ export function About() {
               </div>
               
               <div className="flex items-start gap-4 group">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center flex-shrink-0">
-                  <Briefcase size={28} className="text-blue-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-14 h-14 rounded-2xl bg-primary/5 group-hover:bg-primary transition-colors duration-300 flex items-center justify-center flex-shrink-0">
+                  <Briefcase size={28} className="text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-1">For Companies</h3>
@@ -49,8 +49,8 @@ export function About() {
               </div>
               
               <div className="flex items-start gap-4 group">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center flex-shrink-0">
-                  <Globe size={28} className="text-blue-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-14 h-14 rounded-2xl bg-primary/5 group-hover:bg-primary transition-colors duration-300 flex items-center justify-center flex-shrink-0">
+                  <Globe size={28} className="text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-1">Global Reach</h3>
@@ -91,7 +91,7 @@ export function About() {
                  </div>
                  <span className="font-bold text-gray-900">Excellence</span>
               </div>
-              <div className="text-3xl font-bold text-blue-600 mb-1">10+ Years</div>
+              <div className="text-3xl font-bold text-primary mb-1">10+ Years</div>
               <div className="text-sm text-gray-500 font-medium">Of Trusted Service</div>
             </motion.div>
             
@@ -100,10 +100,10 @@ export function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute top-10 -right-10 bg-blue-600 rounded-2xl shadow-2xl p-6 text-white hidden md:block"
+              className="absolute top-10 -right-10 bg-primary rounded-2xl shadow-2xl p-6 text-white hidden md:block"
             >
               <div className="text-4xl font-bold mb-1">100%</div>
-              <div className="text-blue-100 font-medium">Client Satisfaction</div>
+              <div className="text-white/90 font-medium">Client Satisfaction</div>
             </motion.div>
           </motion.div>
         </div>

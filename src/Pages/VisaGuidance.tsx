@@ -14,7 +14,7 @@ export function VisaGuidance() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
               Visa Guidance
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -29,16 +29,16 @@ export function VisaGuidance() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                 <Globe className="text-blue-600" /> General Visa Information
+                 <Globe className="text-primary" /> General Visa Information
                </h2>
                <p className="text-gray-600 mb-4 leading-relaxed">
                  Visa requirements vary depending on your citizenship and the destination country. Most countries require your passport to be valid for at least 6 months beyond your planned date of departure.
                </p>
-               <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                 <h3 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+               <div className="bg-primary/5 p-6 rounded-xl border border-primary/20">
+                 <h3 className="font-semibold text-secondary mb-2 flex items-center gap-2">
                    <AlertCircle size={18} /> Important Note
                  </h3>
-                 <p className="text-blue-700 text-sm">
+                 <p className="text-secondary/80 text-sm">
                    We provide guidance and assistance, but the final decision on visa issuance lies solely with the respective embassy or consulate. We recommend starting your visa application process at least 3 months in advance.
                  </p>
                </div>
@@ -50,7 +50,7 @@ export function VisaGuidance() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                 <FileText className="text-blue-600" /> Our Services Include
+                 <FileText className="text-primary" /> Our Services Include
                </h2>
                <ul className="space-y-4">
                  {[
@@ -79,7 +79,7 @@ export function VisaGuidance() {
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Contact our visa specialists today to get a personalized checklist of documents required for your specific trip.
             </p>
-            <button className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">
+            <button className="px-8 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
               Contact Visa Support
             </button>
           </motion.div>

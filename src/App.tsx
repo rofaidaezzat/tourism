@@ -14,7 +14,7 @@ import { NotFound } from "./Pages/NotFound"
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/packages" element={<Packages />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 

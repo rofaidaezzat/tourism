@@ -14,7 +14,7 @@ export function Help() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
               Help Center
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -29,14 +29,14 @@ export function Help() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Phone size={32} className="text-blue-600" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Phone size={32} className="text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-4">Phone Support</h3>
               <p className="text-gray-600 mb-6">
                 Speak directly with our support team for immediate assistance.
               </p>
-              <a href="tel:+1234567890" className="text-blue-600 font-semibold hover:text-blue-700">
+              <a href="tel:+1234567890" className="text-primary font-semibold hover:text-primary">
                 +1 (234) 567-890
               </a>
             </motion.div>
@@ -47,14 +47,14 @@ export function Help() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Mail size={32} className="text-blue-600" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Mail size={32} className="text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-4">Email</h3>
               <p className="text-gray-600 mb-6">
                 Send us an email and we'll get back to you within 24 hours.
               </p>
-              <a href="mailto:support@studenttourism.com" className="text-blue-600 font-semibold hover:text-blue-700">
+              <a href="mailto:support@studenttourism.com" className="text-primary font-semibold hover:text-primary">
                 support@studenttourism.com
               </a>
             </motion.div>
@@ -65,14 +65,14 @@ export function Help() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <MessageCircle size={32} className="text-blue-600" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MessageCircle size={32} className="text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-4">Live Chat</h3>
               <p className="text-gray-600 mb-6">
                 Chat with our support agents in real-time.
               </p>
-              <button className="text-blue-600 font-semibold hover:text-blue-700">
+              <button className="text-primary font-semibold hover:text-primary">
                 Start Chat (Coming Soon)
               </button>
             </motion.div>

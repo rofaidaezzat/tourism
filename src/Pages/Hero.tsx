@@ -6,19 +6,20 @@ import heroBg from '../assets/hero_background.png';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900" />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
+
       {/* Background image with overlay */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />
+      
+      {/* Dark overlay for text contrast */}
+      <div className="absolute inset-0 bg-black/60" />
       
       {/* Animated floating elements */}
       <motion.div
@@ -48,51 +49,25 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white mb-6"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white mb-8"
           >
             <Plane size={20} />
             <span className="text-sm">Professional Student Reception Services</span>
           </motion.div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl text-white mb-10 sm:mb-8 font-bold tracking-tight drop-shadow-lg leading-tight px-2">
             Complete Student Services
             <br />
-            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            <span className="text-white mt-4 sm:mt-2 block">
               For Universities Worldwide
             </span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white mb-12 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-6 sm:px-4">
             Comprehensive reception, logistics, and tourism services for study abroad programs and international students.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button 
-                size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-full shadow-xl"
-              >
-                Get Started
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="bg-white/10 text-white border-white hover:bg-white/20 px-8 py-6 text-lg rounded-full backdrop-blur-sm"
-              >
-                Learn More
-              </Button>
-            </motion.div>
-          </div>
+          
         </motion.div>
         
         {/* Stats */}

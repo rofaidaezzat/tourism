@@ -52,7 +52,7 @@ export function FeaturedTrips() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-4">
             Explore the World with Us
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -81,14 +81,14 @@ export function FeaturedTrips() {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4">
-                    <span className="bg-white/90 backdrop-blur-md text-blue-700 font-semibold px-4 py-1.5 rounded-full text-sm shadow-sm">
+                    <span className="bg-white/90 backdrop-blur-md text-primary font-semibold px-4 py-1.5 rounded-full text-sm shadow-sm">
                       {trip.badge}
                     </span>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin size={16} className="text-blue-300" />
+                      <MapPin size={16} className="text-secondary" />
                       <span className="text-sm font-medium opacity-90">
                         {trip.location}
                       </span>
@@ -98,7 +98,7 @@ export function FeaturedTrips() {
 
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 leading-tight group-hover:text-primary transition-colors">
                       {trip.title}
                     </h3>
                   </div>
@@ -109,13 +109,13 @@ export function FeaturedTrips() {
 
                   <div className="grid grid-cols-2 gap-4 mb-6 pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-2 text-gray-600">
-                      <Calendar size={18} className="text-blue-500" />
+                      <Calendar size={18} className="text-primary" />
                       <span className="text-sm font-medium">
                         {trip.duration}
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-600">
-                      <Users size={18} className="text-blue-500" />
+                      <Users size={18} className="text-primary" />
                       <span className="text-sm font-medium">
                         {trip.students} Joined
                       </span>
@@ -127,21 +127,7 @@ export function FeaturedTrips() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-16"
-        >
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-blue-600 text-blue-700 hover:bg-blue-50 rounded-full px-10 py-6 text-lg font-semibold transition-all hover:scale-105"
-          >
-            View All Destinations
-          </Button>
-        </motion.div>
+      
       </div>
     </section>
   );

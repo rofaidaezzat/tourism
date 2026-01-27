@@ -50,7 +50,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="p-6 h-full hover:shadow-xl transition-shadow duration-300 rounded-2xl border-none bg-white relative">
-                <Quote className="absolute top-4 right-4 text-blue-200" size={40} />
+                <Quote className="absolute top-4 right-4 text-primary/30" size={40} />
                 
                 <div className="flex items-center gap-4 mb-4">
                   <Avatar className="w-14 h-14">

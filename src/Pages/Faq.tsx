@@ -40,7 +40,7 @@ export function Faq() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
               Frequently Asked Questions
             </h1>
             <p className="text-gray-600 text-lg">
@@ -63,7 +63,7 @@ export function Faq() {
                 >
                   <span className="font-semibold text-gray-900">{faq.question}</span>
                   {openIndex === index ? (
-                    <ChevronUp size={20} className="text-blue-600" />
+                    <ChevronUp size={20} className="text-primary" />
                   ) : (
                     <ChevronDown size={20} className="text-gray-400" />
                   )}

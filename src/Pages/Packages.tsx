@@ -57,7 +57,7 @@ export function Packages() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
               Travel Packages
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -81,8 +81,8 @@ export function Packages() {
                     alt={pkg.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 text-sm font-semibold text-blue-600">
-                    <Star size={14} className="fill-blue-600" />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 text-sm font-semibold text-primary">
+                    <Star size={14} className="fill-primary" />
                     {pkg.rating}
                   </div>
                 </div>
@@ -91,15 +91,15 @@ export function Packages() {
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{pkg.title}</h3>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3 text-gray-500 text-sm">
-                      <Calendar size={16} className="text-blue-500" />
+                      <Calendar size={16} className="text-primary" />
                       {pkg.duration}
                     </div>
                     <div className="flex items-center gap-3 text-gray-500 text-sm">
-                      <Users size={16} className="text-blue-500" />
+                      <Users size={16} className="text-primary" />
                       {pkg.groupSize}
                     </div>
                     <div className="flex items-center gap-3 text-gray-500 text-sm">
-                      <Map size={16} className="text-blue-500" />
+                      <Map size={16} className="text-primary" />
                       {pkg.destinations.join(", ")}
                     </div>
                   </div>
@@ -107,9 +107,9 @@ export function Packages() {
                   <div className="flex items-center justify-between mt-6 pt-6 border-t border-gray-100">
                     <div>
                       <span className="text-sm text-gray-500">Starting from</span>
-                      <p className="text-2xl font-bold text-blue-600">{pkg.price}</p>
+                      <p className="text-2xl font-bold text-primary">{pkg.price}</p>
                     </div>
-                    <button className="px-4 py-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 font-semibold transition-colors flex items-center gap-2 group-hover:gap-3">
+                    <button className="px-4 py-2 rounded-lg bg-primary/5 text-primary hover:bg-primary/10 hover:text-primary font-semibold transition-colors flex items-center gap-2 group-hover:gap-3">
                       Details <ArrowRight size={16} />
                     </button>
                   </div>

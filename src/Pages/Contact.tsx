@@ -153,7 +153,7 @@ export function Contact() {
             <div className="flex justify-end pt-2">
               <Button 
                 type="submit"
-                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 rounded-full font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+                className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary hover:to-primary rounded-full font-medium py-3 px-6 rounded-lg transition-colors duration-200"
               >
                 Send message
               </Button>
