@@ -12,6 +12,8 @@ import { Terms } from "./Pages/Terms"
 import { Privacy } from "./Pages/Privacy"
 import { NotFound } from "./Pages/NotFound"
 
+import Watsapp from "./Component/Watsapp/Watsapp"
+
 function App() {
   return (
     <div className="overflow-x-hidden">
@@ -26,6 +28,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <Watsapp />
     </div>
   )
 }
