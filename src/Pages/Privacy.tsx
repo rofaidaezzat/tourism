@@ -12,44 +12,44 @@ export function Privacy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
-            <div className="prose prose-blue max-w-none text-gray-600">
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">سياسة الخصوصية</h1>
+            <div className="prose prose-gray max-w-none text-gray-600">
               <p className="mb-6">
-                Last updated: January 2026
+                آخر تحديث: يناير 2026
               </p>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Information We Collect</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">1. المعلومات التي نجمعها</h2>
                 <p>
-                  We collect information that you provide directly to us, such as when you create an account, make a booking, or contact us for support. This may include your name, email address, phone number, and passport details.
+                  نجمع المعلومات التي تقدمها لنا مباشرة، مثل عند إنشاء حساب أو إجراء حجز أو التواصل معنا للحصول على الدعم. قد يشمل ذلك اسمك وعنوان بريدك الإلكتروني ورقم هاتفك وتفاصيل جواز السفر.
                 </p>
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">2. How We Use Your Information</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">2. كيف نستخدم معلوماتك</h2>
                 <p>
-                  We use the information we collect to provide, maintain, and improve our services, to process your bookings, and to communicate with you.
+                  نستخدم المعلومات التي نجمعها لتقديم خدماتنا وصيانتها وتحسينها، ومعالجة حجوزاتك، والتواصل معك.
                 </p>
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Sharing of Information</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">3. مشاركة المعلومات</h2>
                 <p>
-                  We may share your Personal Information with third-party service providers (such as airlines and hotels) to facilitate your travel arrangements. We do not sell your personal information.
+                  قد نشارك معلوماتك الشخصية مع مقدمي خدمات الطرف الثالث (مثل شركات الطيران والفنادق) لتسهيل ترتيبات سفرك. نحن لا نبيع معلوماتك الشخصية.
                 </p>
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Data Security</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">4. أمان البيانات</h2>
                 <p>
-                  We implement appropriate technical and organizational measures to protect specific information you submit. However, please be aware that no method of transmission over the internet is 100% secure.
+                  ننفذ إجراءات تقنية وتنظيمية مناسبة لحماية المعلومات التي تقدمها. ومع ذلك، يرجى العلم أنه لا توجد طريقة نقل عبر الإنترنت آمنة بنسبة 100%.
                 </p>
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Your Choices</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">5. خياراتك</h2>
                 <p>
-                  You may update, correct, or delete information about you at any time by logging into your account or contacting us. You may also opt out of receiving promotional communications.
+                  يمكنك تحديث أو تصحيح أو حذف المعلومات المتعلقة بك في أي وقت عن طريق تسجيل الدخول إلى حسابك أو التواصل معنا. يمكنك أيضاً إلغاء الاشتراك في تلقي الاتصالات الترويجية.
                 </p>
               </section>
             </div>

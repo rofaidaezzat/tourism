@@ -15,50 +15,50 @@ export function VisaGuidance() {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-              Visa Guidance
+              إرشادات التأشيرة
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Navigating visa requirements can be complex. We provide comprehensive support to ensure you have all necessary documentation for your trip.
+              يمكن أن تكون متطلبات التأشيرة معقدة. نقدم دعماً شاملاً لضمان حصولك على جميع الوثائق اللازمة لرحلتك.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                 <Globe className="text-primary" /> General Visa Information
+                 <Globe className="text-primary" /> معلومات عامة عن التأشيرة
                </h2>
                <p className="text-gray-600 mb-4 leading-relaxed">
-                 Visa requirements vary depending on your citizenship and the destination country. Most countries require your passport to be valid for at least 6 months beyond your planned date of departure.
+                 تختلف متطلبات التأشيرة حسب جنسيتك وبلد الوجهة. تتطلب معظم الدول أن يكون جواز سفرك صالحاً لمدة 6 أشهر على الأقل بعد تاريخ المغادرة المخطط له.
                </p>
                <div className="bg-primary/5 p-6 rounded-xl border border-primary/20">
                  <h3 className="font-semibold text-secondary mb-2 flex items-center gap-2">
-                   <AlertCircle size={18} /> Important Note
+                   <AlertCircle size={18} /> ملاحظة هامة
                  </h3>
                  <p className="text-secondary/80 text-sm">
-                   We provide guidance and assistance, but the final decision on visa issuance lies solely with the respective embassy or consulate. We recommend starting your visa application process at least 3 months in advance.
+                   نقدم التوجيه والمساعدة، لكن القرار النهائي بشأن إصدار التأشيرة يعود حصرياً للسفارة أو القنصلية المعنية. ننصح ببدء عملية طلب التأشيرة قبل 3 أشهر على الأقل.
                  </p>
                </div>
             </motion.div>
 
              <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                 <FileText className="text-primary" /> Our Services Include
+                 <FileText className="text-primary" /> خدماتنا تشمل
                </h2>
                <ul className="space-y-4">
                  {[
-                   "Assessment of visa requirements for your itinerary",
-                   "Review of application forms and supporting documents",
-                   "Appointment scheduling with embassies/consulates",
-                   "Interview preparation guidance",
-                   "Updates on application status"
+                   "تقييم متطلبات التأشيرة لبرنامج رحلتك",
+                   "مراجعة نماذج الطلب والوثائق الداعمة",
+                   "جدولة المواعيد مع السفارات والقنصليات",
+                   "التحضير لإرشادات المقابلة",
+                   "تحديثات حول حالة الطلب"
                  ].map((item, index) => (
                    <li key={index} className="flex items-start gap-3">
                      <CheckCircle size={20} className="text-green-500 mt-1 flex-shrink-0" />
@@ -75,12 +75,12 @@ export function VisaGuidance() {
              transition={{ duration: 0.5, delay: 0.4 }}
              className="bg-gray-50 rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-2xl font-bold mb-4">Ready to start your application?</h2>
+            <h2 className="text-2xl font-bold mb-4">هل أنت مستعد لبدء طلبك؟</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Contact our visa specialists today to get a personalized checklist of documents required for your specific trip.
+              تواصل مع متخصصي التأشيرات لدينا اليوم للحصول على قائمة مخصصة بالوثائق المطلوبة لرحلتك.
             </p>
             <button className="px-8 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-              Contact Visa Support
+              تواصل مع دعم التأشيرات
             </button>
           </motion.div>
         </div>

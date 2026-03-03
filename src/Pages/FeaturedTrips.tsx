@@ -10,33 +10,33 @@ import southAmericanTripImg from "../assets/south_american_trip.png";
 const trips = [
   {
     image: europeanTripImg,
-    title: "European Cultural Expedition",
-    location: "Paris, Rome & Barcelona",
-    duration: "12 Days",
+    title: "رحلة ثقافية أوروبية",
+    location: "باريس، روما وبرشلونة",
+    duration: "12 يوم",
     rating: 4.9,
     students: 24,
-    badge: "Trending",
-    description: "Immerse yourself in art, history, and cuisine.",
+    badge: "رائج",
+    description: "انغمس في الفن والتاريخ والمطبخ الأوروبي.",
   },
   {
     image: asianTripImg,
-    title: "Asian Adventure Experience",
-    location: "Kyoto, Tokyo & Singapore",
-    duration: "10 Days",
+    title: "تجربة مغامرة آسيوية",
+    location: "كيوتو، طوكيو وسنغافورة",
+    duration: "10 أيام",
     rating: 4.8,
     students: 18,
-    badge: "New",
-    description: "Discover ancient traditions and modern wonders.",
+    badge: "جديد",
+    description: "اكتشف التقاليد العريقة والعجائب الحديثة.",
   },
   {
     image: southAmericanTripImg,
-    title: "South American Discovery",
-    location: "Peru, Chile & Argentina",
-    duration: "14 Days",
+    title: "اكتشاف أمريكا الجنوبية",
+    location: "بيرو، تشيلي والأرجنتين",
+    duration: "14 يوم",
     rating: 5.0,
     students: 16,
-    badge: "Featured",
-    description: "Hike ancient trails and explore vibrant cultures.",
+    badge: "مميز",
+    description: "تسلق المسارات القديمة واستكشف ثقافات نابضة بالحياة.",
   },
 ];
 
@@ -51,15 +51,13 @@ export function FeaturedTrips() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-4">
-            Explore the World with Us
-          </div>
+          
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Featured Student Journeys
+            رحلات طلابية مميزة
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Unforgettable educational adventures designed for young explorers.
-            Safe, fun, and culturally immersive.
+            مغامرات تعليمية لا تُنسى مصممة للمستكشفين الشباب.
+            آمنة وممتعة وغنية ثقافياً.
           </p>
         </motion.div>
 
@@ -79,13 +77,13 @@ export function FeaturedTrips() {
                     alt={trip.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-4 left-4">
                     <span className="bg-white/90 backdrop-blur-md text-primary font-semibold px-4 py-1.5 rounded-full text-sm shadow-sm">
                       {trip.badge}
                     </span>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="absolute bottom-4 right-4 left-4 text-white">
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin size={16} className="text-secondary" />
                       <span className="text-sm font-medium opacity-90">
@@ -116,7 +114,7 @@ export function FeaturedTrips() {
                     <div className="flex items-center gap-2 text-gray-600">
                       <Users size={18} className="text-primary" />
                       <span className="text-sm font-medium">
-                        {trip.students} Joined
+                        {trip.students} انضموا
                       </span>
                     </div>
                   </div>
@@ -126,7 +124,14 @@ export function FeaturedTrips() {
           ))}
         </div>
 
-      
+        <div className="text-center mt-12">
+          <a
+            href="#contact"
+            className="inline-block bg-gray-900 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg"
+          >
+            احجز اجتماع مجاني
+          </a>
+        </div>
       </div>
     </section>
   );

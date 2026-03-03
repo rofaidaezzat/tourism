@@ -9,33 +9,33 @@ import tourismTripsImg from '../assets/tourism_trips.png';
 const services = [
   {
     image: studentReceptionImg,
-    title: 'Warm Welcomes & Seamless Arrivals',
-    description: 'We ensure a smooth transition for students with our premium meet-and-greet services at airports and borders, partnering with universities to provide a hospitable first impression.',
-    color: 'from-orange-400 to-orange-500', 
+    title: 'استقبال حار ووصول سلس',
+    description: 'نضمن انتقالاً سلساً للطلاب من خلال خدمات الاستقبال المتميزة في المطارات والحدود، بالتعاون مع الجامعات لتقديم انطباع أول مُضيف.',
+    color: 'from-gray-700 to-gray-800', 
   },
   {
     image: logisticsSupportImg,
-    title: 'End-to-End Logistics & Coordination',
-    description: 'From transportation to accommodation, our expert team manages every detail of the journey, allowing institutions and corporations to focus on their core objectives.',
-    color: 'from-orange-500 to-orange-600',
+    title: 'لوجستيات وتنسيق شامل',
+    description: 'من النقل إلى الإقامة، يدير فريقنا المتخصص كل تفاصيل الرحلة، مما يسمح للمؤسسات والشركات بالتركيز على أهدافها الأساسية.',
+    color: 'from-gray-800 to-gray-900',
   },
   {
     image: educationalMarketingImg,
-    title: 'Strategic Educational Marketing',
-    description: 'We help educational institutions shine with tailored marketing strategies that attract talent and elevate your brand presence in the global market.',
-    color: 'from-orange-600 to-orange-700',
+    title: 'تسويق تعليمي استراتيجي',
+    description: 'نساعد المؤسسات التعليمية على التألق من خلال استراتيجيات تسويق مخصصة تجذب المواهب وترفع من حضور علامتك التجارية في السوق العالمي.',
+    color: 'from-gray-900 to-black',
   },
   {
     image: tourismTripsImg,
-    title: 'Unforgettable Cultural Journeys',
-    description: 'Curating enriching travel experiences for students and corporate teams. Our programs blend education, culture, and adventure to create lasting memories.',
-    color: 'from-orange-500 to-orange-600',
+    title: 'رحلات ثقافية لا تُنسى',
+    description: 'تنظيم تجارب سفر إثرائية للطلاب والفرق المؤسسية. برامجنا تمزج بين التعليم والثقافة والمغامرة لخلق ذكريات دائمة.',
+    color: 'from-gray-800 to-gray-900',
   },
 ];
 
 export function Services() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,10 +45,10 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Our Premium Services
+            خدماتنا المتميزة
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Tailored solutions designed for <span className="text-primary font-semibold">Universities</span> and <span className="text-primary font-semibold">Companies</span>. We bridge the gap between education and travel with professionalism and style.
+            حلول مصممة خصيصاً لـ<span className="text-primary font-semibold">الجامعات</span> و<span className="text-primary font-semibold">الشركات</span>. نسد الفجوة بين التعليم والسفر باحترافية وأناقة.
           </p>
         </motion.div>
         

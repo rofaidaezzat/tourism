@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from 'lucide-react';
-import logoTop from '../assets/Gemini_Generated_Image_ijgu4tijgu4tijgu__1_-removebg-preview.png';
-import logoScrolled from '../assets/photo_2026-01-27_12-25-13-removebg-preview.png';
+import logoWhite from '../assets/white-removebg-preview.png';
+import logoScrolled from '../assets/0a60b085-1-removebg-preview.png';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +19,12 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Packages', href: '#packages' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'الرئيسية', href: '#' },
+    { name: 'من نحن', href: '#about' },
+    { name: 'خدماتنا', href: '#services' },
+    { name: 'الباقات', href: '#packages' },
+    { name: 'آراء العملاء', href: '#testimonials' },
+    { name: 'تواصل معنا', href: '#contact' },
   ];
 
   return (
@@ -39,14 +39,14 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2"
           >
             <img 
-              src={scrolled ? logoScrolled : logoTop}
-              alt="Student Tourism" 
+              src={scrolled ? logoScrolled : logoWhite}
+              alt="سياحة الطلاب" 
               className="h-32 w-auto object-contain"
             />
           </motion.div>
@@ -62,8 +62,8 @@ export function Navbar() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`transition-colors ${
                   scrolled 
-                    ? 'text-gray-700 hover:text-blue-600' 
-                    : 'text-white hover:text-blue-200'
+                    ? 'text-gray-700 hover:text-gray-900' 
+                    : 'text-white hover:text-gray-300'
                 }`}
               >
                 {link.name}
@@ -102,7 +102,7 @@ export function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-gray-700 hover:text-blue-600 transition-colors py-2"
+                  className="block text-gray-700 hover:text-gray-900 transition-colors py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}

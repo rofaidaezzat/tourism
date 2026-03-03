@@ -1,6 +1,4 @@
 import "./App.css"
-
-
 import { Routes, Route } from "react-router-dom"
 import { Footer } from "./Pages/Footer"
 import { Home } from "./Pages/Home"

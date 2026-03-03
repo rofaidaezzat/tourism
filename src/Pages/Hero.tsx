@@ -23,7 +23,7 @@ export function Hero() {
       
       {/* Animated floating elements */}
       <motion.div
-        className="absolute top-20 left-10 text-white/20"
+        className="absolute top-20 right-10 text-white/20"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -31,7 +31,7 @@ export function Hero() {
       </motion.div>
       
       <motion.div
-        className="absolute bottom-40 right-20 text-white/20"
+        className="absolute bottom-40 left-20 text-white/20"
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -52,21 +52,27 @@ export function Hero() {
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white mb-8"
           >
             <Plane size={20} />
-            <span className="text-sm">Professional Student Reception Services</span>
+            <span className="text-sm">خدمات استقبال طلابية احترافية</span>
           </motion.div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl text-white mb-10 sm:mb-8 font-bold tracking-tight drop-shadow-lg leading-tight px-2">
-            Complete Student Services
+            خدمات طلابية متكاملة
             <br />
             <span className="text-white mt-4 sm:mt-2 block">
-              For Universities Worldwide
+              للجامعات حول العالم
             </span>
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-white mb-12 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-6 sm:px-4">
-            Comprehensive reception, logistics, and tourism services for study abroad programs and international students.
+            خدمات استقبال شاملة ولوجستيات وسياحة لبرامج الدراسة بالخارج والطلاب الدوليين.
           </p>
           
+          <a
+            href="#contact"
+            className="inline-block bg-white text-gray-900 font-semibold text-lg px-8 py-4 rounded-full hover:bg-gray-200 transition-colors duration-300 shadow-lg"
+          >
+            احجز اجتماع مجاني
+          </a>
           
         </motion.div>
         
@@ -78,13 +84,13 @@ export function Hero() {
           className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8"
         >
           {[
-            { number: '100+', label: 'Partner Universities' },
-            { number: '15K+', label: 'Students Served' },
-            { number: '25+', label: 'Countries' },
+            { number: '+100', label: 'جامعة شريكة' },
+            { number: '+15K', label: 'طالب تمت خدمتهم' },
+            { number: '+25', label: 'دولة' },
           ].map((stat, index) => (
             <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-6">
               <div className="text-4xl text-white mb-2">{stat.number}</div>
-              <div className="text-blue-100">{stat.label}</div>
+              <div className="text-gray-300">{stat.label}</div>
             </div>
           ))}
         </motion.div>

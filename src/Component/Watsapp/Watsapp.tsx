@@ -1,7 +1,7 @@
 import "./Watsapp.css";
 const Watsapp = () => {
   return (
-    <div className="fixed bottom-6 right-6 z-[1000]">
+    <div className="fixed bottom-6 left-6 z-[1000]">
       <a
         href="https://wa.me/201001026024"
         target="_blank"

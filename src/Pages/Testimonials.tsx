@@ -5,46 +5,46 @@ import { Avatar } from '../Component/Avatar';
 
 const testimonials = [
   {
-    name: 'Dr. Sarah Mitchell',
-    university: 'Director of International Programs, UCLA',
+    name: 'د. سارة ميتشل',
+    university: 'مديرة البرامج الدولية، UCLA',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop',
     rating: 5,
-    text: 'Their airport reception services have been invaluable. Every student arrival is handled professionally, and the coordination with our office is seamless.',
+    text: 'خدمات الاستقبال في المطارات كانت لا تقدر بثمن. يتم التعامل مع وصول كل طالب باحترافية، والتنسيق مع مكتبنا سلس تماماً.',
   },
   {
-    name: 'Prof. Michael Chen',
-    university: 'Study Abroad Coordinator, MIT',
+    name: 'أ.د. مايكل تشين',
+    university: 'منسق الدراسة بالخارج، MIT',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
     rating: 5,
-    text: 'The logistical support they provide has transformed our international student experience. From airport pickup to accommodation setup, everything runs smoothly.',
+    text: 'الدعم اللوجستي الذي يقدمونه حوّل تجربة الطلاب الدوليين لدينا. من الاستقبال في المطار إلى ترتيب الإقامة، كل شيء يسير بسلاسة.',
   },
   {
-    name: 'Emma Rodriguez',
-    university: 'International Office Manager, NYU',
+    name: 'إيما رودريغيز',
+    university: 'مديرة المكتب الدولي، NYU',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop',
     rating: 5,
-    text: 'We\'ve partnered with them for 5 years. Their marketing services have helped us attract quality international students and build our global reputation.',
+    text: 'تعاونا معهم منذ 5 سنوات. خدمات التسويق ساعدتنا في جذب طلاب دوليين متميزين وبناء سمعتنا العالمية.',
   },
   {
-    name: 'James Wilson',
-    university: 'Dean of Students, Oxford University',
+    name: 'جيمس ويلسون',
+    university: 'عميد شؤون الطلاب، جامعة أكسفورد',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop',
     rating: 5,
-    text: 'The tourism programs they organize are educational and engaging. Students return with enriched cultural perspectives and unforgettable experiences.',
+    text: 'البرامج السياحية التي ينظمونها تعليمية وممتعة. يعود الطلاب بمنظورات ثقافية غنية وتجارب لا تُنسى.',
   },
   {
-    name: 'Dr. Priya Patel',
-    university: 'VP International Relations, Stanford',
+    name: 'د. بريا باتيل',
+    university: 'نائب رئيس العلاقات الدولية، ستانفورد',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop',
     rating: 5,
-    text: 'Professional, reliable, and incredibly responsive. They\'ve become an essential partner in our international student services infrastructure.',
+    text: 'محترفون وموثوقون وسريعو الاستجابة بشكل لا يصدق. أصبحوا شريكاً أساسياً في بنية خدمات الطلاب الدوليين لدينا.',
   },
   {
-    name: 'David Kim',
-    university: 'Associate Director, Harvard Extension',
+    name: 'ديفيد كيم',
+    university: 'مدير مشارك، Harvard Extension',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop',
     rating: 5,
-    text: 'Their 24/7 support gives us peace of mind. We know our students are in good hands from the moment they land until they settle in.',
+    text: 'دعمهم على مدار الساعة يمنحنا راحة البال. نعلم أن طلابنا في أيدٍ أمينة من لحظة هبوطهم حتى استقرارهم.',
   },
 ];
 
@@ -60,10 +60,10 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl text-gray-900 mb-4">
-            University Testimonials
+            آراء الجامعات
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            What our partner institutions say about our services
+            ماذا تقول مؤسساتنا الشريكة عن خدماتنا
           </p>
         </motion.div>
         
@@ -77,7 +77,7 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="p-6 h-full hover:shadow-xl transition-shadow duration-300 rounded-2xl border-none bg-white relative">
-                <Quote className="absolute top-4 right-4 text-primary/30" size={40} />
+                <Quote className="absolute top-4 left-4 text-primary/30" size={40} />
                 
                 <div className="flex items-center gap-4 mb-4">
                   <Avatar className="w-14 h-14">

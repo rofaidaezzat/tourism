@@ -5,24 +5,24 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is included in the travel packages?",
-    answer: "Our packages typically include accommodation, transportation (flights/trains), guided tours, and some meals. Specific inclusions vary by package, so please check the details for each trip."
+    question: "ما الذي تتضمنه باقات السفر؟",
+    answer: "تتضمن باقاتنا عادةً الإقامة والنقل (رحلات جوية/قطارات) والجولات المصحوبة بمرشدين وبعض الوجبات. تختلف التفاصيل حسب كل باقة، يرجى مراجعة تفاصيل كل رحلة."
   },
   {
-    question: "Do you offer travel insurance?",
-    answer: "Yes, we strongly recommend travel insurance. We offer comprehensive travel insurance packages as an add-on during the booking process to cover medical emergencies, trip cancellations, and lost luggage."
+    question: "هل تقدمون تأمين سفر؟",
+    answer: "نعم، نوصي بشدة بتأمين السفر. نقدم باقات تأمين سفر شاملة كإضافة أثناء عملية الحجز لتغطية الطوارئ الطبية وإلغاء الرحلات وفقدان الأمتعة."
   },
   {
-    question: "Can I customize a travel package?",
-    answer: "Currently, our student packages are pre-planned to ensure best pricing and coordination. However, for large groups (10+ students), we may be able to offer customized itineraries. Please contact our support team."
+    question: "هل يمكنني تخصيص باقة سفر؟",
+    answer: "حالياً، باقات الطلاب مخططة مسبقاً لضمان أفضل الأسعار والتنسيق. ومع ذلك، للمجموعات الكبيرة (أكثر من 10 طلاب)، قد نتمكن من تقديم برامج رحلات مخصصة. يرجى التواصل مع فريق الدعم."
   },
   {
-    question: "What is the cancellation policy?",
-    answer: "Cancellations made 60 days before the trip are fully refundable (minus a small processing fee). Cancellations between 30-59 days receive a 50% refund. Cancellations within 30 days are non-refundable."
+    question: "ما هي سياسة الإلغاء؟",
+    answer: "الإلغاء قبل 60 يوماً من الرحلة يتم استرداد كامل المبلغ (مع خصم رسوم معالجة بسيطة). الإلغاء بين 30-59 يوماً يحصل على استرداد 50%. الإلغاء خلال 30 يوماً غير قابل للاسترداد."
   },
   {
-    question: "Are there age restrictions for student trips?",
-    answer: "Our trips are designed for university and college students, typically aged 18-25. However, we also have packages suitable for high school students with chaperone supervision."
+    question: "هل هناك قيود عمرية لرحلات الطلاب؟",
+    answer: "رحلاتنا مصممة لطلاب الجامعات والكليات، عادةً بين 18-25 عاماً. ومع ذلك، لدينا أيضاً باقات مناسبة لطلاب المدارس الثانوية بإشراف مرافقين."
   }
 ];
 
@@ -41,10 +41,10 @@ export function Faq() {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-              Frequently Asked Questions
+              الأسئلة الشائعة
             </h1>
             <p className="text-gray-600 text-lg">
-              Find answers to the most common questions about our services and packages.
+              اعثر على إجابات للأسئلة الأكثر شيوعاً حول خدماتنا وباقاتنا.
             </p>
           </motion.div>
 
@@ -59,13 +59,13 @@ export function Faq() {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left"
+                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-right"
                 >
                   <span className="font-semibold text-gray-900">{faq.question}</span>
                   {openIndex === index ? (
-                    <ChevronUp size={20} className="text-primary" />
+                    <ChevronUp size={20} className="text-primary flex-shrink-0" />
                   ) : (
-                    <ChevronDown size={20} className="text-gray-400" />
+                    <ChevronDown size={20} className="text-gray-400 flex-shrink-0" />
                   )}
                 </button>
                 {openIndex === index && (

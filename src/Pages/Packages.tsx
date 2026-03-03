@@ -1,47 +1,47 @@
 import { Navbar } from "./Navbar";
 import { motion } from "framer-motion";
-import { Map, Calendar, Users, Star, ArrowRight } from "lucide-react";
+import { Map, Calendar, Users, Star, ArrowLeft } from "lucide-react";
 
 const packages = [
   {
     id: 1,
-    title: "European Adventure",
+    title: "مغامرة أوروبية",
     image: "https://images.unsplash.com/photo-1499856871940-a09627c6d7db?auto=format&fit=crop&q=80",
-    duration: "14 Days",
-    groupSize: "15-20 Students",
+    duration: "14 يوم",
+    groupSize: "15-20 طالب",
     rating: 4.8,
     price: "$2,499",
-    destinations: ["Paris", "Rome", "Berlin", "Amsterdam"]
+    destinations: ["باريس", "روما", "برلين", "أمستردام"]
   },
   {
     id: 2,
-    title: "Asian Discovery",
+    title: "اكتشاف آسيا",
     image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&q=80",
-    duration: "12 Days",
-    groupSize: "10-15 Students",
+    duration: "12 يوم",
+    groupSize: "10-15 طالب",
     rating: 4.9,
     price: "$1,899",
-    destinations: ["Tokyo", "Seoul", "Bangkok", "Singapore"]
+    destinations: ["طوكيو", "سيول", "بانكوك", "سنغافورة"]
   },
   {
     id: 3,
-    title: "American Dream",
+    title: "الحلم الأمريكي",
     image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80",
-    duration: "15 Days",
-    groupSize: "20-25 Students",
+    duration: "15 يوم",
+    groupSize: "20-25 طالب",
     rating: 4.7,
     price: "$2,999",
-    destinations: ["New York", "Los Angeles", "Chicago", "Miami"]
+    destinations: ["نيويورك", "لوس أنجلوس", "شيكاغو", "ميامي"]
   },
   {
     id: 4,
-    title: "Australian Outback",
+    title: "أستراليا البرية",
     image: "https://images.unsplash.com/photo-1523482580672-01e6f061f5bf?auto=format&fit=crop&q=80",
-    duration: "10 Days",
-    groupSize: "10-12 Students",
+    duration: "10 أيام",
+    groupSize: "10-12 طالب",
     rating: 4.9,
     price: "$2,199",
-    destinations: ["Sydney", "Melbourne", "Gold Coast", "Cairns"]
+    destinations: ["سيدني", "ملبورن", "جولد كوست", "كيرنز"]
   }
 ];
 
@@ -58,11 +58,11 @@ export function Packages() {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-              Travel Packages
+              باقات السفر
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Explore our carefully curated travel packages designed specifically for students. 
-              Safe, affordable, and filled with unforgettable experiences.
+              استكشف باقات السفر المختارة بعناية والمصممة خصيصاً للطلاب.
+              آمنة وبأسعار معقولة ومليئة بتجارب لا تُنسى.
             </p>
           </motion.div>
 
@@ -81,7 +81,7 @@ export function Packages() {
                     alt={pkg.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 text-sm font-semibold text-primary">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 text-sm font-semibold text-primary">
                     <Star size={14} className="fill-primary" />
                     {pkg.rating}
                   </div>
@@ -100,17 +100,17 @@ export function Packages() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-500 text-sm">
                       <Map size={16} className="text-primary" />
-                      {pkg.destinations.join(", ")}
+                      {pkg.destinations.join("، ")}
                     </div>
                   </div>
                   
                   <div className="flex items-center justify-between mt-6 pt-6 border-t border-gray-100">
                     <div>
-                      <span className="text-sm text-gray-500">Starting from</span>
+                      <span className="text-sm text-gray-500">يبدأ من</span>
                       <p className="text-2xl font-bold text-primary">{pkg.price}</p>
                     </div>
                     <button className="px-4 py-2 rounded-lg bg-primary/5 text-primary hover:bg-primary/10 hover:text-primary font-semibold transition-colors flex items-center gap-2 group-hover:gap-3">
-                      Details <ArrowRight size={16} />
+                      التفاصيل <ArrowLeft size={16} />
                     </button>
                   </div>
                 </div>

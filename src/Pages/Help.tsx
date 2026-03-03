@@ -15,10 +15,10 @@ export function Help() {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-              Help Center
+              مركز المساعدة
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Need assistance? We're here to help you 24/7. Choose how you'd like to reach us.
+              تحتاج مساعدة؟ نحن هنا لخدمتك على مدار الساعة. اختر الطريقة المناسبة للتواصل معنا.
             </p>
           </motion.div>
 
@@ -32,11 +32,11 @@ export function Help() {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone size={32} className="text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Phone Support</h3>
+              <h3 className="text-xl font-bold mb-4">الدعم الهاتفي</h3>
               <p className="text-gray-600 mb-6">
-                Speak directly with our support team for immediate assistance.
+                تحدث مباشرة مع فريق الدعم للحصول على مساعدة فورية.
               </p>
-              <a href="tel:+1234567890" className="text-primary font-semibold hover:text-primary">
+              <a href="tel:+1234567890" className="text-primary font-semibold hover:text-primary" style={{direction: 'ltr'}}>
                 +1 (234) 567-890
               </a>
             </motion.div>
@@ -50,11 +50,11 @@ export function Help() {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail size={32} className="text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Email</h3>
+              <h3 className="text-xl font-bold mb-4">البريد الإلكتروني</h3>
               <p className="text-gray-600 mb-6">
-                Send us an email and we'll get back to you within 24 hours.
+                أرسل لنا بريداً إلكترونياً وسنرد عليك خلال 24 ساعة.
               </p>
-              <a href="mailto:support@studenttourism.com" className="text-primary font-semibold hover:text-primary">
+              <a href="mailto:support@studenttourism.com" className="text-primary font-semibold hover:text-primary" style={{direction: 'ltr'}}>
                 support@studenttourism.com
               </a>
             </motion.div>
@@ -68,26 +68,26 @@ export function Help() {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MessageCircle size={32} className="text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Live Chat</h3>
+              <h3 className="text-xl font-bold mb-4">المحادثة المباشرة</h3>
               <p className="text-gray-600 mb-6">
-                Chat with our support agents in real-time.
+                تحدث مع وكلاء الدعم في الوقت الفعلي.
               </p>
               <button className="text-primary font-semibold hover:text-primary">
-                Start Chat (Coming Soon)
+                بدء المحادثة (قريباً)
               </button>
             </motion.div>
           </div>
 
           <div className="mt-16 text-center">
-             <h2 className="text-2xl font-bold mb-8">Frequently Asked Questions</h2>
-             <div className="max-w-3xl mx-auto text-left space-y-4">
+             <h2 className="text-2xl font-bold mb-8">الأسئلة الشائعة</h2>
+             <div className="max-w-3xl mx-auto text-right space-y-4">
                  <div className="bg-gray-50 p-6 rounded-xl">
-                     <h4 className="font-semibold mb-2">How do I book a trip?</h4>
-                     <p className="text-gray-600">You can book directly through our website by selecting a package and clicking "Book Now". Alternatively, contact our support team.</p>
+                     <h4 className="font-semibold mb-2">كيف أحجز رحلة؟</h4>
+                     <p className="text-gray-600">يمكنك الحجز مباشرة عبر موقعنا من خلال اختيار باقة والنقر على "احجز الآن". بدلاً من ذلك، تواصل مع فريق الدعم.</p>
                  </div>
                  <div className="bg-gray-50 p-6 rounded-xl">
-                     <h4 className="font-semibold mb-2">What payment methods do you accept?</h4>
-                     <p className="text-gray-600">We accept all major credit cards, PayPal, and bank transfers.</p>
+                     <h4 className="font-semibold mb-2">ما هي طرق الدفع المقبولة؟</h4>
+                     <p className="text-gray-600">نقبل جميع بطاقات الائتمان الرئيسية وPayPal والتحويلات البنكية.</p>
                  </div>
              </div>
           </div>
