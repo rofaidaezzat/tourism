@@ -45,15 +45,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white mb-8"
-          >
-            <Plane size={20} />
-            <span className="text-sm">خدمات استقبال طلابية احترافية</span>
-          </motion.div>
+         
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl text-white mb-10 sm:mb-8 font-bold tracking-tight drop-shadow-lg leading-tight px-2">
             خدمات طلابية متكاملة

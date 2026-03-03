@@ -47,7 +47,7 @@ export function Navbar() {
             <img 
               src={scrolled ? logoScrolled : logoWhite}
               alt="سياحة الطلاب" 
-              className="h-32 w-auto object-contain"
+              className="h-48 w-auto object-contain"
             />
           </motion.div>
 
