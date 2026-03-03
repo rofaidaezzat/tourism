@@ -14,7 +14,7 @@ const Watsapp = () => {
           </svg>
         </div>
 
-        <div className="text">Whatsapp</div>
+     
       </a>
     </div>
   );
