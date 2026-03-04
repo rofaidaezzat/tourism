@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 import logoWhite from '../assets/white-removebg-preview.png';
 import logoScrolled from '../assets/0a60b085-1-removebg-preview.png';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, toggleLanguage, isRTL } = useLanguage();
+  const t = translations[language].nav;
 
   // Handle scroll effect
   useEffect(() => {
@@ -31,16 +35,16 @@ export function Navbar() {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
-    }, 300); // wait for menu close animation to finish
+    }, 300);
   };
 
   const navLinks = [
-    { name: 'الرئيسية', href: '#' },
-    { name: 'من نحن', href: '#about' },
-    { name: 'خدماتنا', href: '#services' },
-    { name: 'الباقات', href: '#packages' },
-    { name: 'آراء العملاء', href: '#testimonials' },
-    { name: 'تواصل معنا', href: '#contact' },
+    { name: t.home, href: '#' },
+    { name: t.about, href: '#about' },
+    { name: t.services, href: '#services' },
+    { name: t.packages, href: '#packages' },
+    { name: t.testimonials, href: '#testimonials' },
+    { name: t.contact, href: '#contact' },
   ];
 
   return (
@@ -53,7 +57,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Mobile Menu Button - shown on left for RTL */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
@@ -65,7 +69,7 @@ export function Navbar() {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Logo - centered/right on mobile, left on desktop */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -79,7 +83,7 @@ export function Navbar() {
             />
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation + Translate Button */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
               <motion.a
@@ -97,7 +101,38 @@ export function Navbar() {
                 {link.name}
               </motion.a>
             ))}
+
+            {/* Translate Button */}
+            <motion.button
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: navLinks.length * 0.1 }}
+              onClick={toggleLanguage}
+              title={language === 'ar' ? 'Translate to English' : 'ترجمة للعربية'}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 font-medium text-sm ${
+                scrolled
+                  ? 'border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'
+                  : 'border-white/40 text-white hover:bg-white/10 hover:border-white/70'
+              }`}
+            >
+              <Languages size={16} />
+              <span>{isRTL ? 'EN' : 'عر'}</span>
+            </motion.button>
           </div>
+
+          {/* Mobile translate button (top-right area) */}
+          <button
+            onClick={toggleLanguage}
+            title={language === 'ar' ? 'Translate to English' : 'ترجمة للعربية'}
+            className={`md:hidden flex items-center gap-1 px-2 py-1 rounded-full border text-xs font-medium transition-all duration-300 ${
+              scrolled
+                ? 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                : 'border-white/40 text-white hover:bg-white/10'
+            }`}
+          >
+            <Languages size={14} />
+            <span>{isRTL ? 'EN' : 'عر'}</span>
+          </button>
         </div>
       </div>
 
@@ -116,13 +151,12 @@ export function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-gray-700 hover:text-gray-900 transition-colors py-2 text-right"
+                  className={`block text-gray-700 hover:text-gray-900 transition-colors py-2 ${isRTL ? 'text-right' : 'text-left'}`}
                   onClick={(e) => handleMobileNavClick(e, link.href)}
                 >
                   {link.name}
                 </a>
               ))}
-            
             </div>
           </motion.div>
         )}

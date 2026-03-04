@@ -1,44 +1,25 @@
 import { useState, useRef } from 'react';
 import { motion } from "framer-motion";
 import { Shield, Users, Globe, Clock, Award, Headphones, ChevronLeft, ChevronRight } from 'lucide-react';
-
-const benefits = [
-  {
-    icon: Shield,
-    title: 'موثوق واحترافي',
-    description: 'دعم على مدار الساعة وسجل حافل بإدارة وصول الطلاب والخدمات اللوجستية بنجاح.',
-  },
-  {
-    icon: Users,
-    title: 'فرق استقبال متخصصة',
-    description: 'فريق عمل ذو خبرة في المطارات والحدود لاستقبال الطلاب وتقديم المساعدة الفورية.',
-  },
-  {
-    icon: Globe,
-    title: 'شبكة عالمية',
-    description: 'شراكات راسخة في أكثر من 25 دولة مع خبرات وموارد محلية.',
-  },
-  {
-    icon: Clock,
-    title: 'تنسيق سلس',
-    description: 'إدارة لوجستية شاملة من الوصول إلى الإقامة والتوجيه.',
-  },
-  {
-    icon: Award,
-    title: 'ضمان الجودة',
-    description: 'عمليات معتمدة بمعايير ISO تضمن جودة خدمة متسقة لجميع المؤسسات الشريكة.',
-  },
-  {
-    icon: Headphones,
-    title: 'دعم مستمر',
-    description: 'دعم متواصل طوال العام الأكاديمي مع مديري حسابات مخصصين.',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function WhyChooseUs() {
+  const { language } = useLanguage();
+  const t = translations[language].why;
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const benefits = [
+    { icon: Shield, title: t.b1Title, description: t.b1Desc },
+    { icon: Users, title: t.b2Title, description: t.b2Desc },
+    { icon: Globe, title: t.b3Title, description: t.b3Desc },
+    { icon: Clock, title: t.b4Title, description: t.b4Desc },
+    { icon: Award, title: t.b5Title, description: t.b5Desc },
+    { icon: Headphones, title: t.b6Title, description: t.b6Desc },
+  ];
 
   const checkScroll = () => {
     if (scrollContainerRef.current) {
@@ -75,31 +56,29 @@ export function WhyChooseUs() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            لماذا تتشارك معنا؟
+            {t.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            موثوق من قبل الجامعات حول العالم لخدمات طلابية استثنائية
+            {t.subtitle}
           </p>
         </motion.div>
         
         <div className="relative">
-          {/* Right Arrow (RTL: scroll left visually) */}
+          {/* Right Arrow */}
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="التمرير لليمين"
             >
               <ChevronRight size={24} className="text-gray-700" />
             </button>
           )}
           
-          {/* Left Arrow (RTL: scroll right visually) */}
+          {/* Left Arrow */}
           {canScrollRight && (
             <button
               onClick={() => scroll('right')}
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="التمرير لليسار"
             >
               <ChevronLeft size={24} className="text-gray-700" />
             </button>

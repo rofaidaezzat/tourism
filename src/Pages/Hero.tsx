@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
-
-
 import { Plane } from 'lucide-react';
 import heroBg from '../assets/hero_background.png';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function Hero() {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
+  const stats = [
+    { number: '+100', label: t.stat1 },
+    { number: '+15K', label: t.stat2 },
+    { number: '+25', label: t.stat3 },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
 
@@ -45,25 +54,23 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-         
-          
           <h1 className="text-4xl sm:text-5xl lg:text-7xl text-white mb-10 sm:mb-8 font-bold tracking-tight drop-shadow-lg leading-tight px-2">
-            خدمات طلابية متكاملة
+            {t.title1}
             <br />
             <span className="text-white mt-4 sm:mt-2 block">
-              للجامعات حول العالم
+              {t.title2}
             </span>
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-white mb-12 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-6 sm:px-4">
-            خدمات استقبال شاملة ولوجستيات وسياحة لبرامج الدراسة بالخارج والطلاب الدوليين.
+            {t.subtitle}
           </p>
           
           <a
             href="#contact"
             className="inline-block bg-white text-gray-900 font-semibold text-lg px-8 py-4 rounded-full hover:bg-gray-200 transition-colors duration-300 shadow-lg"
           >
-            احجز اجتماع مجاني
+            {t.cta}
           </a>
           
         </motion.div>
@@ -75,11 +82,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8"
         >
-          {[
-            { number: '+100', label: 'جامعة شريكة' },
-            { number: '+15K', label: 'طالب تمت خدمتهم' },
-            { number: '+25', label: 'دولة' },
-          ].map((stat, index) => (
+          {stats.map((stat, index) => (
             <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-6">
               <div className="text-4xl text-white mb-2">{stat.number}</div>
               <div className="text-gray-300">{stat.label}</div>

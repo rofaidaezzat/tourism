@@ -1,11 +1,22 @@
-
-
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/white-removebg-preview.png';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+
+  const footerLinks = [
+    { name: t.home, href: '/' },
+    { name: t.about, href: '/#about' },
+    { name: t.services, href: '/#services' },
+    { name: t.packages, href: '/#packages' },
+    { name: t.testimonials, href: '/#testimonials' },
+    { name: t.contact, href: '/#contact' },
+  ];
   
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-secondary to-gray-900 text-white border-t border-gray-800">
@@ -13,18 +24,11 @@ export function Footer() {
         {/* Main row: logo + links + socials */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <img src={logo} alt="سياحة الطلاب" className="h-48 w-auto object-contain" />
+          <img src={logo} alt="Student Tourism" className="h-48 w-auto object-contain" />
 
           {/* Horizontal Nav Links */}
           <nav className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            {[
-              { name: 'الرئيسية', href: '/' },
-              { name: 'من نحن', href: '/#about' },
-              { name: 'خدماتنا', href: '/#services' },
-              { name: 'الباقات', href: '/#packages' },
-              { name: 'آراء العملاء', href: '/#testimonials' },
-              { name: 'تواصل معنا', href: '/#contact' }
-            ].map((link, index) => (
+            {footerLinks.map((link, index) => (
               link.href.startsWith('/#') ? (
                 <a key={index} href={link.href} className="text-white/80 hover:text-white transition-colors text-sm">
                   {link.name}
@@ -54,7 +58,7 @@ export function Footer() {
         {/* Bottom copyright */}
         <div className="mt-4 pt-3 border-t border-gray-800 text-center">
           <p className="text-white/60 text-xs">
-            © {currentYear} خدمات سياحة الطلاب. جميع الحقوق محفوظة.
+            © {currentYear} {t.copyright}
           </p>
         </div>
       </div>

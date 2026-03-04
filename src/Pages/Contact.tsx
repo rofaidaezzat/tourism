@@ -4,8 +4,13 @@ import { Input } from '../Component/Input';
 import { Button } from '../Component/Button';
 import { Textarea } from '../Component/Textarea';
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -27,7 +32,7 @@ export function Contact() {
     
     const phoneNumber = "201223050957"; 
     
-    const text = `الاسم: ${formData.firstName} ${formData.lastName}%0Aالبريد: ${formData.email}%0Aالهاتف: ${formData.phone}%0Aالرسالة: ${formData.message}`;
+    const text = `Name: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
     
@@ -46,7 +51,7 @@ export function Contact() {
     <section className="min-h-screen bg-transparent text-gray-900 flex items-center justify-center p-4 lg:p-8">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
         
-        {/* Right Column: Contact Info */}
+        {/* Contact Info Column */}
         <motion.div
            initial={{ opacity: 0, x: 50 }}
            animate={{ opacity: 1, x: 0 }}
@@ -55,10 +60,10 @@ export function Contact() {
         >
           <div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-gray-900">
-              تواصل معنا
+              {t.title}
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed max-w-md">
-              نحن هنا لمساعدتك في التخطيط لرحلتك القادمة. تواصل معنا وسنرد عليك في أقرب وقت.
+              {t.subtitle}
             </p>
           </div>
 
@@ -66,8 +71,8 @@ export function Contact() {
             <div className="flex items-start gap-4 text-gray-500">
               <Building className="w-6 h-6 mt-1 text-gray-400" />
               <div>
-                <p className="font-medium text-gray-900">545 جزيرة مافيس</p>
-                <p>شيكاغو، IL 99191</p>
+                <p className="font-medium text-gray-900">{t.address}</p>
+                <p>{t.city}</p>
               </div>
             </div>
 
@@ -83,7 +88,7 @@ export function Contact() {
           </div>
         </motion.div>
 
-        {/* Left Column: Form */}
+        {/* Form Column */}
         <motion.div
            initial={{ opacity: 0, x: -50 }}
            animate={{ opacity: 1, x: 0 }}
@@ -93,7 +98,7 @@ export function Contact() {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">الاسم الأول</label>
+                <label className="text-sm font-semibold text-gray-700">{t.firstName}</label>
                 <Input 
                   name="firstName"
                   value={formData.firstName}
@@ -103,7 +108,7 @@ export function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">الاسم الأخير</label>
+                <label className="text-sm font-semibold text-gray-700">{t.lastName}</label>
                 <Input 
                   name="lastName"
                   value={formData.lastName}
@@ -115,7 +120,7 @@ export function Contact() {
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-gray-700">البريد الإلكتروني</label>
+              <label className="text-sm font-semibold text-gray-700">{t.email}</label>
               <Input 
                 name="email"
                 type="email"
@@ -127,7 +132,7 @@ export function Contact() {
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-gray-700">رقم الهاتف</label>
+              <label className="text-sm font-semibold text-gray-700">{t.phone}</label>
               <Input 
                 name="phone"
                 type="tel"
@@ -139,7 +144,7 @@ export function Contact() {
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-gray-700">الرسالة</label>
+              <label className="text-sm font-semibold text-gray-700">{t.message}</label>
               <Textarea 
                 name="message"
                 value={formData.message}
@@ -155,7 +160,7 @@ export function Contact() {
                 type="submit"
                 className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary hover:to-primary rounded-full font-medium py-3 px-6 rounded-lg transition-colors duration-200"
               >
-                إرسال الرسالة
+                {t.send}
               </Button>
             </div>
           </form>

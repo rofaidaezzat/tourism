@@ -4,11 +4,14 @@ import './index.css'
 import App from './App.tsx'
 
 import { BrowserRouter } from 'react-router-dom'
+import { LanguageProvider } from './context/LanguageContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
     </BrowserRouter>
   </StrictMode>,
 )

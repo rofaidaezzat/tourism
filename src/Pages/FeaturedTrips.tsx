@@ -1,46 +1,49 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Users } from "lucide-react";
 import { Card } from "../Component/Card";
-
-// Import local images
 import europeanTripImg from "../assets/european_trip.png";
 import asianTripImg from "../assets/asian_trip.png";
 import southAmericanTripImg from "../assets/south_american_trip.png";
-
-const trips = [
-  {
-    image: europeanTripImg,
-    title: "رحلة ثقافية أوروبية",
-    location: "باريس، روما وبرشلونة",
-    duration: "12 يوم",
-    rating: 4.9,
-    students: 24,
-    badge: "رائج",
-    description: "انغمس في الفن والتاريخ والمطبخ الأوروبي.",
-  },
-  {
-    image: asianTripImg,
-    title: "تجربة مغامرة آسيوية",
-    location: "كيوتو، طوكيو وسنغافورة",
-    duration: "10 أيام",
-    rating: 4.8,
-    students: 18,
-    badge: "جديد",
-    description: "اكتشف التقاليد العريقة والعجائب الحديثة.",
-  },
-  {
-    image: southAmericanTripImg,
-    title: "اكتشاف أمريكا الجنوبية",
-    location: "بيرو، تشيلي والأرجنتين",
-    duration: "14 يوم",
-    rating: 5.0,
-    students: 16,
-    badge: "مميز",
-    description: "تسلق المسارات القديمة واستكشف ثقافات نابضة بالحياة.",
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function FeaturedTrips() {
+  const { language } = useLanguage();
+  const t = translations[language].trips;
+
+  const trips = [
+    {
+      image: europeanTripImg,
+      title: t.t1Title,
+      location: t.t1Location,
+      duration: t.t1Duration,
+      rating: 4.9,
+      students: 24,
+      badge: t.t1Badge,
+      description: t.t1Desc,
+    },
+    {
+      image: asianTripImg,
+      title: t.t2Title,
+      location: t.t2Location,
+      duration: t.t2Duration,
+      rating: 4.8,
+      students: 18,
+      badge: t.t2Badge,
+      description: t.t2Desc,
+    },
+    {
+      image: southAmericanTripImg,
+      title: t.t3Title,
+      location: t.t3Location,
+      duration: t.t3Duration,
+      rating: 5.0,
+      students: 16,
+      badge: t.t3Badge,
+      description: t.t3Desc,
+    },
+  ];
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -51,13 +54,11 @@ export function FeaturedTrips() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            رحلات طلابية مميزة
+            {t.title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            مغامرات تعليمية لا تُنسى مصممة للمستكشفين الشباب.
-            آمنة وممتعة وغنية ثقافياً.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto whitespace-pre-line">
+            {t.subtitle}
           </p>
         </motion.div>
 
@@ -114,7 +115,7 @@ export function FeaturedTrips() {
                     <div className="flex items-center gap-2 text-gray-600">
                       <Users size={18} className="text-primary" />
                       <span className="text-sm font-medium">
-                        {trip.students} انضموا
+                        {trip.students} {t.joined}
                       </span>
                     </div>
                   </div>
@@ -129,7 +130,7 @@ export function FeaturedTrips() {
             href="#contact"
             className="inline-block bg-gray-900 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg"
           >
-            احجز اجتماع مجاني
+            {t.cta}
           </a>
         </div>
       </div>

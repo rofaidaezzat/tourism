@@ -1,39 +1,43 @@
 import { motion } from "framer-motion";
 import { Card } from '../Component/Card';
-
 import studentReceptionImg from '../assets/student_reception.png';
 import logisticsSupportImg from '../assets/logistics_support.png';
 import educationalMarketingImg from '../assets/educational_marketing.png';
 import tourismTripsImg from '../assets/tourism_trips.png';
-
-const services = [
-  {
-    image: studentReceptionImg,
-    title: 'استقبال حار ووصول سلس',
-    description: 'نضمن انتقالاً سلساً للطلاب من خلال خدمات الاستقبال المتميزة في المطارات والحدود، بالتعاون مع الجامعات لتقديم انطباع أول مُضيف.',
-    color: 'from-gray-700 to-gray-800', 
-  },
-  {
-    image: logisticsSupportImg,
-    title: 'لوجستيات وتنسيق شامل',
-    description: 'من النقل إلى الإقامة، يدير فريقنا المتخصص كل تفاصيل الرحلة، مما يسمح للمؤسسات والشركات بالتركيز على أهدافها الأساسية.',
-    color: 'from-gray-800 to-gray-900',
-  },
-  {
-    image: educationalMarketingImg,
-    title: 'تسويق تعليمي استراتيجي',
-    description: 'نساعد المؤسسات التعليمية على التألق من خلال استراتيجيات تسويق مخصصة تجذب المواهب وترفع من حضور علامتك التجارية في السوق العالمي.',
-    color: 'from-gray-900 to-black',
-  },
-  {
-    image: tourismTripsImg,
-    title: 'رحلات ثقافية لا تُنسى',
-    description: 'تنظيم تجارب سفر إثرائية للطلاب والفرق المؤسسية. برامجنا تمزج بين التعليم والثقافة والمغامرة لخلق ذكريات دائمة.',
-    color: 'from-gray-800 to-gray-900',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function Services() {
+  const { language } = useLanguage();
+  const t = translations[language].services;
+
+  const services = [
+    {
+      image: studentReceptionImg,
+      title: t.s1Title,
+      description: t.s1Desc,
+      color: 'from-gray-700 to-gray-800',
+    },
+    {
+      image: logisticsSupportImg,
+      title: t.s2Title,
+      description: t.s2Desc,
+      color: 'from-gray-800 to-gray-900',
+    },
+    {
+      image: educationalMarketingImg,
+      title: t.s3Title,
+      description: t.s3Desc,
+      color: 'from-gray-900 to-black',
+    },
+    {
+      image: tourismTripsImg,
+      title: t.s4Title,
+      description: t.s4Desc,
+      color: 'from-gray-800 to-gray-900',
+    },
+  ];
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -45,10 +49,10 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            خدماتنا المتميزة
+            {t.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            حلول مصممة خصيصاً لـ<span className="text-primary font-semibold">الجامعات</span> و<span className="text-primary font-semibold">الشركات</span>. نسد الفجوة بين التعليم والسفر باحترافية وأناقة.
+            {t.subtitle}<span className="text-primary font-semibold">{t.forUniv}</span>{t.and}<span className="text-primary font-semibold">{t.forCorp}</span>{t.subtitle2}
           </p>
         </motion.div>
         

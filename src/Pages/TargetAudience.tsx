@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, ChevronLeft } from 'lucide-react';
-
+import { GraduationCap, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
 import universityImg from '../assets/university_campus_vibe.png';
 import corporateImg from '../assets/corporate_team_vibe.png';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export function TargetAudience() {
+  const { language, isRTL } = useLanguage();
+  const t = translations[language].target;
+  const ArrowIcon = isRTL ? ChevronLeft : ChevronRight;
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -16,10 +21,10 @@ export function TargetAudience() {
            className="text-center mb-16"
         >
            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-             مصمم حسب احتياجاتك
+             {t.title}
            </h2>
            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-             سواء كنت تبني عقولاً شابة أو تقود ثورة أعمال، لدينا الحل المثالي للسفر من أجلك.
+             {t.subtitle}
            </p>
         </motion.div>
 
@@ -34,7 +39,7 @@ export function TargetAudience() {
            >
               <img 
                 src={universityImg} 
-                alt="طلاب الجامعات" 
+                alt="Universities" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/50" />
@@ -44,12 +49,12 @@ export function TargetAudience() {
                  <div className="w-16 h-16 rounded-2xl bg-gray-800/90 backdrop-blur-md flex items-center justify-center mb-6">
                    <GraduationCap size={32} className="text-white" />
                  </div>
-                 <h3 className="text-3xl font-bold text-white mb-3">للجامعات</h3>
+                 <h3 className="text-3xl font-bold text-white mb-3">{t.univTitle}</h3>
                  <p className="text-white/90 text-lg mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    مكّن طلابك بتجارب عالمية آمنة وتعليمية تغيّر الحياة. نتولى الخدمات اللوجستية المعقدة حتى تتمكن من التركيز على المناهج الدراسية.
+                    {t.univDesc}
                  </p>
                  <button className="flex items-center gap-2 text-white font-semibold group-hover:gap-4 group-hover:text-gray-300 transition-all">
-                    استكشف الرحلات الأكاديمية <ChevronLeft size={20} />
+                    {t.univCta} <ArrowIcon size={20} />
                  </button>
               </div>
            </motion.div>
@@ -64,7 +69,7 @@ export function TargetAudience() {
            >
               <img 
                 src={corporateImg} 
-                alt="فريق الشركات" 
+                alt="Corporations" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/45" />
@@ -74,12 +79,12 @@ export function TargetAudience() {
                  <div className="w-16 h-16 rounded-2xl bg-gray-800/90 backdrop-blur-md flex items-center justify-center mb-6">
                    <Briefcase size={32} className="text-white" />
                  </div>
-                 <h3 className="text-3xl font-bold text-white mb-3">للشركات</h3>
+                 <h3 className="text-3xl font-bold text-white mb-3">{t.corpTitle}</h3>
                  <p className="text-white/90 text-lg mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    ارتقِ بثقافة فريقك من خلال رحلات متميزة وسفر أعمال سلس. من الخدمات اللوجستية إلى الترفيه، نقدم الاحترافية في كل خطوة.
+                    {t.corpDesc}
                  </p>
                  <button className="flex items-center gap-2 text-white font-semibold group-hover:gap-4 group-hover:text-gray-300 transition-all">
-                    اكتشف حلول الشركات <ChevronLeft size={20} />
+                    {t.corpCta} <ArrowIcon size={20} />
                  </button>
               </div>
            </motion.div>
